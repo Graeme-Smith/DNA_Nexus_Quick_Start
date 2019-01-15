@@ -2,7 +2,7 @@
 
 This is a quick crib sheet to help bioinformaticians get up to speed with developing pipelines in DNA Nexus, it assumes familiarity with the Linux commandline. The :link: symbol indicates an external link to more info.
 
-DNA Nexus is a cloud-based provider targeting genomic analysis and runs it's service on Amazon Web Service (AWS) infrastructure, although it also supports Microsoft Azure. 
+DNA Nexus is a cloud-based provider offering a platform to run genomic analysis and runs it's service on Amazon Web Service (AWS) infrastructure, although it also supports Microsoft Azure. 
 
 ***Access DNA Nexus via your web browser*** 
 
@@ -10,7 +10,9 @@ https://www.dnanexus.com/
 
 ***Install DNA Nexus commandline client & upload agent***
 
-Instructions for installing the dx-toolkit and upload agent can be found here and here
+Instructions for installing the DNAnexus Platform SDK and upload agent can be found [here](https://wiki.dnanexus.com/Downloads#DNAnexus-Platform-SDK) and [here](https://wiki.dnanexus.com/Upload-Agent).  The DNAnexus Upload Agent is a command-line client used to upload files to DNAnexus.
+
+There is a good [Quick Start Guide](https://wiki.dnanexus.com/Command-Line-Client/Quickstart) to using the SDK and a comprehensive list of commands can be found [here](https://wiki.dnanexus.com/Command-Line-Client/Index-of-dx-Commands).
 
 ***Log into DNA Nexus via commandline***
 
@@ -33,10 +35,6 @@ dx run --instance-type mem1_ssd1_x8 app-cloud_workstation --ssh
 ```
 
 A full list of instance types for AWS can be found [here](https://wiki.dnanexus.com/API-Specification-v1.0.0/Instance-Types#).  Make sure the instance type you choose has sufficient memory for your purposes. 
-
-***DNA Nexus and Continous Integration with Travis CI***
-
-DNA nexus provides limited support for continous integration with [Travis](https://gist.github.com/mlin/3ad81f01efa640a52813).  This allows automated testing of the pipeline which should make maintenance and upgrades easier.
 
 We then need to reset some environment variables so that we can access files other projects:
 
@@ -66,10 +64,14 @@ When writing WDL scripts we can download a syntax highlighter for VS Code or Sub
 
 WDL[:link:](https://software.broadinstitute.org/wdl/) is a language for defining workflows developed at the Broad Institute which can be compiled into a pipeline.  DNA Nexus supports it's own platform specific compiler, [dxWDL](https://github.com/dnanexus/dxWDL), which will take a WDL script and compile it into a functional pipeline on their platform.
 
-******
+An example script can be seen below:
 
 ```wdl
 
 ```
+
+***DNA Nexus and Continous Integration with Travis CI***
+
+DNA nexus provides limited support for continous integration with [Travis](https://gist.github.com/mlin/3ad81f01efa640a52813).  This allows automated testing of the pipeline which should make maintenance and upgrades easier.
 
 
