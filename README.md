@@ -2,13 +2,17 @@
 
 This is a quick crib sheet to help bioinformaticians get up to speed with developing pipelines in DNA Nexus, it assumes familiarity with the Linux commandline. The :link: symbol indicates an external link to more info.
 
-DNA Nexus is a cloud-based provider
+DNA Nexus is a cloud-based provider targeting genomic analysis and runs it's service on Amazon Web Service (AWS) infrastructure, although it also supports Microsoft Azure. 
 
-***Install DNA Nexus commandline client & upload agent****
+***Access DNA Nexus via your web browser*** 
+
+https://www.dnanexus.com/
+
+***Install DNA Nexus commandline client & upload agent***
 
 Instructions for installing the dx-toolkit and upload agent can be found here and here
 
-***Log into DNA Nexus***
+***Log into DNA Nexus via commandline***
 
 ```bash
 dx login
@@ -30,13 +34,14 @@ dx run --instance-type mem1_ssd1_x8 app-cloud_workstation --ssh
 
 A full list of instance types for AWS can be found [here](https://wiki.dnanexus.com/API-Specification-v1.0.0/Instance-Types#).  Make sure the instance type you choose has sufficient memory for your purposes. 
 
-***Using docker with an Interactive Workstation ***
 
+***Using docker with an Interactive Workstation***
 
+Using docker images simplifies the process of creating our pipeline and will make it more robust  
 
 ***Reconnect to an Interactive Workstation***
 
-
+If you loose internet connection or logout of a terminal connected to a worksation that instance will continue running any tasks set and will persist until it reaches the time limit set when in was started.  You can reconnect to that  
 
 ***Create pipeline with dxWDL***
 
