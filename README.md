@@ -8,6 +8,8 @@ DNA Nexus is a cloud-based provider offering a platform to run genomic analysis 
 
 https://www.dnanexus.com/
 
+Monitor jobs
+
 ***Install DNA Nexus commandline client & upload agent***
 
 Instructions for installing the DNAnexus Platform SDK and upload agent can be found [here](https://wiki.dnanexus.com/Downloads#DNAnexus-Platform-SDK) and [here](https://wiki.dnanexus.com/Upload-Agent).  The DNAnexus Upload Agent is a command-line client used to upload files to DNAnexus.
@@ -26,7 +28,7 @@ Set up API key
 
 ***Create DNA Nexus Interactive Workstation***
 
-For development purposes it can be helpful to create an interactive session with a DNA Nexus workstation in the cloud [:link:](https://wiki.dnanexus.com/developer-tutorials/cloud-workstations).  We can use this instance to test/troubleshoot commands for bioinformatic tools in the pipeline. 
+For development purposes it can be helpful to create an interactive session with a DNA Nexus workstation in the cloud [:link:](https://wiki.dnanexus.com/developer-tutorials/cloud-workstations).  We can use this instance to test/troubleshoot commands for bioinformatic tools we plan to use in the pipeline. 
 
 The default instance only has 4 cores, below we specify an instance with 8 cores.
 
@@ -55,7 +57,17 @@ Using docker images simplifies the process of creating our pipeline and will mak
 
 ***Reconnect to an Interactive Workstation***
 
-If you loose internet connection or logout of a terminal connected to a worksation that instance will continue running any tasks set and will persist until it reaches the time limit set when in was started.  You can reconnect to that  
+If you loose internet connection or logout of a terminal connected to a worksation will persist until it reaches its preset time limit.  You can reconnect to that work station using the following command and specifying the relevan job ID (this can be found via the browser
+
+```bash
+dx ssh job-FQyBvF70Vy577bQq1vZgVXpa
+```
+
+***Terminate a workstation***
+
+I prefer to terminate the workstation instance from the browser.  This allows shows me the cost of running that workstation and allows me to check if any other instances are open under that project.
+
+Navigate to the project which the workstation was run from, click ```Monitor``` from the taskbar, select the appropriate Cloud Workstation, and then click terminate. 
 
 ***Create pipeline with dxWDL***
 
