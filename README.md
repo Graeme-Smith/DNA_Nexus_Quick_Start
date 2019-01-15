@@ -6,9 +6,22 @@ DNA Nexus is a cloud-based provider offering a platform to run genomic analysis 
 
 ***Access DNA Nexus via your web browser*** 
 
-https://www.dnanexus.com/
+Log in to your account at https://www.dnanexus.com/
 
-Monitor jobs
+Select the project which you are working on.  There should be 4 tabs in the taskbar:
+
+Settings: 
+* Get the project ID (Useful when navigating via the command line)
+* Set billing info
+* Change project name
+
+Manage:
+* See files uploaded to the project
+* To find file ID - Right click file > Info 
+
+Monitor:
+* Monitor running jobs
+* Terminate jobs
 
 ***Install DNA Nexus command line client & upload agent***
 
@@ -38,7 +51,7 @@ The default instance only has 4 cores, below we specify an instance with 8 cores
 dx run --instance-type mem1_ssd1_x8 app-cloud_workstation --ssh
 ```
 
-A full list of instance types for AWS can be found [here](https://wiki.dnanexus.com/API-Specification-v1.0.0/Instance-Types#).  Make sure the instance type you choose has sufficient memory for your purposes. 
+A full list of instance types for AWS can be found [here](https://wiki.dnanexus.com/API-Specification-v1.0.0/Instance-Types#).  Make sure the instance type you choose has sufficient memory for your purposes.  Select a maximum life span for this CLoud Workstation, for example 24h. 
 
 We then need to reset some environment variables so that we can access files in other projects:
 
