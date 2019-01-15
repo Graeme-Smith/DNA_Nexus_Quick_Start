@@ -73,7 +73,7 @@ dx upload my-file.txt
 
 ***Using docker with an Interactive Workstation***
 
-Using docker images simplifies the process of creating our pipeline and will make it more robust 
+Using docker images simplifies the process of creating our pipeline and will make it more robust (an update to a dependency shouldn't break the pipeline).  DNA nexus now supports the docker CLI natively, see [here](https://wiki.dnanexus.com/Developer-Tutorials/Using-Docker-Images).  DNA nexus recommend pulling public images from an immutable image digest so that there will be no unexpected changes to tool.  The easiest way to find the relevant docker image is to search for the tool on https://bioconda.github.io/recipes.html. There will be a link to an available docker container which will be hosted on [quay.io](quay.io]), click on the Tag icon on the left hand toolbar > click the download icon to the right of the version you want > select Docker Pull (by digest).  Copy this tag for use with DNA nexus commands.
 
 #TODO Add docker image code
 
