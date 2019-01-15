@@ -12,9 +12,11 @@ Monitor jobs
 
 ***Install DNA Nexus commandline client & upload agent***
 
-Instructions for installing the DNAnexus Platform SDK and upload agent can be found [here](https://wiki.dnanexus.com/Downloads#DNAnexus-Platform-SDK) and [here](https://wiki.dnanexus.com/Upload-Agent).  The DNAnexus Upload Agent is a command-line client used to upload files to DNAnexus.
+Instructions for installing the DNAnexus Platform SDK can be found [here](https://wiki.dnanexus.com/Downloads#DNAnexus-Platform-SDK).  This allows you to interacte with the DNA nexus platform from the commandline.
 
-There is a good [Quick Start Guide](https://wiki.dnanexus.com/Command-Line-Client/Quickstart) to using the SDK and a comprehensive list of commands can be found [here](https://wiki.dnanexus.com/Command-Line-Client/Index-of-dx-Commands).
+There is a good [Quick Start Guide](https://wiki.dnanexus.com/Command-Line-Client/Quickstart) to using the SDK and a comprehensive list of commands can be found [here](https://wiki.dnanexus.com/Command-Line-Client/Index-of-dx-Commands).  Don't spend too much time learning how to build DNA nexus apps/applets, we will be using dxWDL and docker to streamline this process as described below.
+
+The DNAnexus Upload Agent is a command-line client used to upload files to DNAnexus, download instructions can be found [here](https://wiki.dnanexus.com/Upload-Agent).
 
 ***Log into DNA Nexus via commandline***
 
