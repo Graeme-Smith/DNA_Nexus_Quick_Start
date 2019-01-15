@@ -23,6 +23,10 @@ Monitor:
 * Monitor running jobs
 * Terminate jobs
 
+Visualise
+
+Once created workflows can be run from within the browser.
+
 ***Install DNA Nexus command line client & upload agent***
 
 Instructions for installing the DNAnexus Platform SDK can be found [here](https://wiki.dnanexus.com/Downloads#DNAnexus-Platform-SDK).  This allows you to interacte with the DNA nexus platform from the command line.
@@ -51,7 +55,7 @@ The default instance only has 4 cores, below we specify an instance with 8 cores
 dx run --instance-type mem1_ssd1_x8 app-cloud_workstation --ssh
 ```
 
-A full list of instance types for AWS can be found [here](https://wiki.dnanexus.com/API-Specification-v1.0.0/Instance-Types#).  Make sure the instance type you choose has sufficient memory for your purposes.  Select a maximum life span for this CLoud Workstation, for example 24h. 
+A full list of instance types for AWS can be found [here](https://wiki.dnanexus.com/API-Specification-v1.0.0/Instance-Types#).  Make sure the instance type you choose has sufficient memory for your purposes.  Select a maximum life span for this Cloud Workstation, for example 24h. 
 
 We then need to reset some environment variables so that we can access files in other projects:
 
@@ -73,7 +77,9 @@ dx upload my-file.txt
 
 ***Using docker with an Interactive Workstation***
 
-Using docker images simplifies the process of creating our pipeline and will make it more robust (an update to a dependency shouldn't break the pipeline).  DNA nexus now supports the docker CLI natively, see [here](https://wiki.dnanexus.com/Developer-Tutorials/Using-Docker-Images).  DNA nexus recommend pulling public images from an immutable image digest so that there will be no unexpected changes to tool.  The easiest way to find the relevant docker image is to search for the tool on https://bioconda.github.io/recipes.html. There will be a link to an available docker container which will be hosted on [quay.io](quay.io]), click on the Tag icon on the left hand toolbar > click the download icon to the right of the version you want > select Docker Pull (by digest).  Copy this tag for use with DNA nexus commands.
+Using docker images simplifies the process of creating our pipeline and will make it more robust (an update to a dependency shouldn't break the pipeline).  DNA nexus now supports the docker CLI natively, see [here](https://wiki.dnanexus.com/Developer-Tutorials/Using-Docker-Images).  DNA nexus recommend pulling public images from an immutable image digest so that there will be no unexpected changes to tool if a dependency changes.  When the pipeline is in production we can store these docker images locally on the DNA nexus platform so that we are not reliant on quay.io for our pipeline to work.
+
+The easiest way to find the relevant docker image is to search for the tool on https://bioconda.github.io/recipes.html. There will be a link to an available docker container hosted on [quay.io](quay.io]), click on the Tag icon on the left hand toolbar > click the download icon to the right of the version you want > select Docker Pull (by digest).  Copy this tag for use with DNA nexus commands and in scripts.
 
 #TODO Add docker image code
 
@@ -83,7 +89,7 @@ Using docker images simplifies the process of creating our pipeline and will mak
 
 ***Reconnect to an Interactive Workstation***
 
-If you loose your internet connection or logout of a terminal connection the cloud workstation will continue to persist until it reaches its preset time limit.  You can reconnect to that work station using the following command specifying the relevant job ID (this can be found via the browser; navigate to the project, select ```Monitor``` from the taskbar, and click the relevant workstation.
+If you loose your internet connection or logout of a terminal connection the cloud workstation will continue to persist until it reaches its preset time limit.  You can reconnect to that work station using the following command specifying the relevant job ID (this can be found via the browser; navigate to the project, select ```Monitor``` from the taskbar, and  clicking the relevant Cloud Workstation in the Name column.
 
 ```bash
 dx ssh job-FQyBvF70Vy577bQq1vZgVXpa
@@ -93,7 +99,7 @@ dx ssh job-FQyBvF70Vy577bQq1vZgVXpa
 
 I prefer to terminate the workstation instance from the browser.  This shows me the cost of running that workstation and allows me to check if any other instances are open under that project.
 
-Navigate to the project which the workstation was run from, click ```Monitor``` from the taskbar, select the appropriate Cloud Workstation, and then click terminate. 
+Navigate to the project which the workstation was run from, click ```Monitor``` from the taskbar, select the appropriate Cloud Workstation, and then click terminate (the ```Terminate``` button only appears when hovering over the line for that Cloud Workstation). 
 
 ***Create pipeline with dxWDL***
 
