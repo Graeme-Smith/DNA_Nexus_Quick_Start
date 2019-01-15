@@ -69,7 +69,7 @@ We need to download files from the project to our Cloud Workstation. To download
 ```bash
 dx download my-file.txt
 ```
-When the Cloud Workstation is terminated all files will be lost.  We therefore need to upload any output we want to keep back up to the project:
+When the Cloud Workstation is terminated all files will be lost.  We therefore need to upload any output we want to keep back up to the parent project:
 
 ```bash
 dx upload --path "$DX_PROJECT_CONTEXT_ID:" my-output.txt
