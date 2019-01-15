@@ -24,7 +24,7 @@ Set up API key
 
 ***Create DNA Nexus Interactive Workstation***
 
-For development purposes it can be helpful to create an interactive session with a DNA Nexus workstation in the cloud [:link:](https://wiki.dnanexus.com/developer-tutorials/cloud-workstations):
+For development purposes it can be helpful to create an interactive session with a DNA Nexus workstation in the cloud [:link:](https://wiki.dnanexus.com/developer-tutorials/cloud-workstations).  We can use this instance to test/troubleshoot commands for bioinformatic tools in the pipeline. 
 
 The default instance only has 4 cores, below we specify an instance with 8 cores.
 
@@ -34,6 +34,22 @@ dx run --instance-type mem1_ssd1_x8 app-cloud_workstation --ssh
 
 A full list of instance types for AWS can be found [here](https://wiki.dnanexus.com/API-Specification-v1.0.0/Instance-Types#).  Make sure the instance type you choose has sufficient memory for your purposes. 
 
+***DNA Nexus and Continous Integration with Travis CI***
+
+DNA nexus provides limited support for continous integration with [Travis](https://gist.github.com/mlin/3ad81f01efa640a52813).  This allows automated testing of the pipeline which should make maintenance and upgrades easier.
+
+We then need to reset some environment variables so that we can access files other projects:
+
+```bash
+unset DX_WORKSPACE_ID
+dx cd $DX_PROJECT_CONTEXT_ID:
+```
+
+To download a file named ```my-file.txt``` from the parent project:
+
+```bash
+dx download my-file.txt
+```
 
 ***Using docker with an Interactive Workstation***
 
