@@ -1,6 +1,8 @@
 ***Quick Start Guide to using DNA Nexus***
 
-This is a quick crib sheet to help bioinformaticians get up to speed with developing pipelines in DNA Nexus, it assumes familiarity with the Linux commandline. The :link: symbol indicates a link to an external site with additional info.
+This is a quick crib sheet to help bioinformaticians get up to speed with developing pipelines in DNA Nexus, it assumes familiarity with the Linux commandline. The :link: symbol indicates an external link to more info.
+
+DNA Nexus is a cloud-based provider
 
 ***Install DNA Nexus commandline client & upload agent****
 
@@ -20,20 +22,30 @@ Set up API key
 
 For development purposes it can be helpful to create an interactive session with a DNA Nexus workstation in the cloud [:link:](https://wiki.dnanexus.com/developer-tutorials/cloud-workstations):
 
+The default instance only has 4 cores, below we specify an instance with 8 cores.
 
 ```bash
 dx run --instance-type mem1_ssd1_x8 app-cloud_workstation --ssh
 ```
+
+A full list of instance types for AWS can be found [here](https://wiki.dnanexus.com/API-Specification-v1.0.0/Instance-Types#).  Make sure the instance type you choose has sufficient memory for your purposes. 
+
 ***Using docker with an Interactive Workstation ***
 
+
+
 ***Reconnect to an Interactive Workstation***
+
+
 
 ***Create pipeline with dxWDL***
 
 When writing WDL scripts we can download a syntax highlighter for VS Code or Sublime 
 (https://github.com/broadinstitute/wdl-sublime-syntax-highlighter) which helps when editing the code.
 
-WDL is 
+WDL[:link:](https://software.broadinstitute.org/wdl/) is a language for defining workflows developed at the Broad Institute which can be compiled into a pipeline.  DNA Nexus supports it's own platform specific compiler, [dxWDL](https://github.com/dnanexus/dxWDL), which will take a WDL script and compile it into a functional pipeline on their platform.
+
+******
 
 ```wdl
 
