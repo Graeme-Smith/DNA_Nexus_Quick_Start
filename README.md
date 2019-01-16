@@ -29,7 +29,7 @@ Once created workflows can be run from within the browser.
 
 ***Install DNA Nexus command line client & upload agent***
 
-Instructions for installing the DNAnexus Platform SDK can be found [here](https://wiki.dnanexus.com/Downloads#DNAnexus-Platform-SDK).  This allows you to interacte with the DNA nexus platform from the command line.
+Instructions for installing the DNAnexus Platform SDK can be found [here](https://wiki.dnanexus.com/Downloads#DNAnexus-Platform-SDK).  This allows you to interact with the DNA nexus platform from the command line.
 
 There is a good [Quick Start Guide](https://wiki.dnanexus.com/Command-Line-Client/Quickstart) to using the SDK and a comprehensive list of commands can be found [here](https://wiki.dnanexus.com/Command-Line-Client/Index-of-dx-Commands).  Don't spend too much time learning how to build DNA nexus apps/applets, we will be using dxWDL and docker to streamline this process as described below.
 
@@ -113,7 +113,25 @@ An example script can be seen below:
 #TODO add example code
 
 ```wdl
+# 16S rRNA pipeline written in WDL
 
+# WDL syntax highlighting for Sublime and VS Code an be found at https://github.com/broadinstitute/wdl-sublime-syntax-highlighter
+
+# NOTE: Validate syntax of workflow with wdltool (https://software.broadinstitute.org/wdl/documentation/validation)
+
+# Define workflow
+workflow nanopore_16s_pipeline {
+    # Specify inputs
+    File fastq
+
+    # Call task to demultiplex fastq files
+    call demultiplex_fastq {
+        input : fastq = fastq
+    }
+    output {
+        dm_multiplex.fastq
+    }
+}
 ```
 
 ***DNA Nexus and Continous Integration with Travis CI***
