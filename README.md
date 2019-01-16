@@ -72,7 +72,11 @@ dx download my-file.txt
 When the Cloud Workstation is terminated all files will be lost.  We therefore need to upload any output we want to keep back up to the parent project:
 
 ```bash
+# Upload single file to project home directory:
 dx upload --path "$DX_PROJECT_CONTEXT_ID:" my-output.txt
+
+#Upload a directory (note the -r recursive flag and that we now specify the directory name to --path)
+dx upload --path "$DX_PROJECT_CONTEXT_ID:/demultiplexed_output/" demultiplexed_output/
 ```
 
 ***Using docker with an Interactive Workstation***
