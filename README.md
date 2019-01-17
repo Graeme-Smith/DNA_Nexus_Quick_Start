@@ -137,6 +137,9 @@ workflow nanopore_16s_pipeline {
     }
 }
 ```
+***View data in DNA nexus***
+
+[Custom viewers](https://wiki.dnanexus.com/Developer-Tutorials/Creating-Custom-Viewers) can be created if you have a working knowledge of HTML and Javascript.
 
 ***DNA Nexus and Continous Integration with Travis CI***
 
