@@ -37,6 +37,13 @@ The DNAnexus Upload Agent is a command-line client used to upload files to DNAne
 
 ***Log into DNA Nexus via command line***
 
+Run 
+```bash
+dx ssh_config
+```
+
+Select 0 to generate new SSH key.
+
 ```bash
 dx login
 ```
